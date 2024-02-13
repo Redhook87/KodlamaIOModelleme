@@ -1,15 +1,13 @@
-﻿using KodlamaIoModelleme.Business.Dtos.Requests;
-using KodlamaIoModelleme.Business.Dtos.Responses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using KodlamaIoModelleme.Business.Dtos.Requests.Instructor;
+using KodlamaIoModelleme.Business.Dtos.Responses.Instructor;
 
 namespace KodlamaIoModelleme.Business.Abstracts;
 
 public interface IInstructorService
 {
     void Add(CreateInstructorRequest instructor);
-    List<GetAllInstructorResponse> GetInstructors();
+    void Delete(DeleteInstructorRequest instructor);
+    void Update(UpdateInstructorRequest instructor);
+    List<GetAllInstructorResponse> GetAll();
+    List<GetByIdInstructorResponse> GetById(int id);
 }

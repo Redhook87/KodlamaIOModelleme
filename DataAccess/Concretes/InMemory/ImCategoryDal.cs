@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace KodlamaIoModelleme.DataAccess.Concretes.InMemory;
 
-public class ImCategoryDal:ICategoryDal
+public class ImCategoryDal : ICategoryDal
 {
     List<Category> categories = new List<Category>();
     public ImCategoryDal()
     {
-        categories.Add(new Category(1, "Programlama"));
+        categories.Add(new Category(1, "Tümü"));
+        categories.Add(new Category(2, "Programlama"));
     }
 
     public void Add(Category category)
@@ -32,7 +33,7 @@ public class ImCategoryDal:ICategoryDal
         return categories;
     }
 
-    public Category GetCategory(int id)
+    public Category GetById(int id)
     {
         var value = categories.FirstOrDefault(c => c.Id == id);
         return value;
