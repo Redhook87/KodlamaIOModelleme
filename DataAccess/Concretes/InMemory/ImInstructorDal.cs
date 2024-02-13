@@ -25,8 +25,27 @@ public class ImInstructorDal:IInstructorDal
         instructors.Add(instructor);
     }
 
+    public void Delete(Instructor instructor)
+    {
+        var value = instructors.FirstOrDefault(i => i.InstructorId == instructor.InstructorId);
+        instructors.Remove(value);
+    }
+
+    public Instructor GetInstructor(int id)
+    {
+        var value = instructors.FirstOrDefault(i => i.InstructorId == id);
+        return value;
+    }
+
     public List<Instructor> GetInstructors()
     {
         return instructors;
+    }
+
+    public void Update(Instructor instructor)
+    {
+        var value = instructors.FirstOrDefault(i => i.InstructorId == instructor.InstructorId);
+        value.FirstName = instructor.FirstName;
+        value.LastName = instructor.LastName;
     }
 }

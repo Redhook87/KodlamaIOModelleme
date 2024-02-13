@@ -34,8 +34,26 @@ public class ImInstructionDal : IInstructionDal
         instructions.Add(instruction);
     }
 
+    public void Delete(Instruction instruction)
+    {
+        var value = instructions.FirstOrDefault(i => i.Id == instruction.Id);
+        instructions.Remove(value);
+    }
+
+    public Instruction GetInstruction(int id)
+    {
+        var value = instructions.FirstOrDefault(i => i.Id == id);
+        return value;
+    }
+
     public List<Instruction> GetInstructions()
     {
         return instructions;
+    }
+
+    public void Update(Instruction instruction)
+    {
+        var value = instructions.FirstOrDefault(i => i.Id == instruction.Id);
+        value.Name = instruction.Name;
     }
 }

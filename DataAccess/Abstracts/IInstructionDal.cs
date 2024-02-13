@@ -10,5 +10,9 @@ namespace KodlamaIoModelleme.DataAccess.Abstracts;
 public interface IInstructionDal
 {
     void Add(Instruction instruction);
+    void Delete(Instruction category);
+    void Update(Instruction category);
     List<Instruction> GetInstructions();
+    Instruction GetInstruction(int id);
+
 }

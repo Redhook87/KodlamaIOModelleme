@@ -8,6 +8,10 @@ namespace KodlamaIoModelleme.Entities;
 
 public class Category
 {
+    public Category()
+    {
+        
+    }
     public Category(int id,string name)
     {
         Id = id;
